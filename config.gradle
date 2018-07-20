@@ -1,0 +1,14 @@
+ext{
+    compileSdkVersion = 26
+    minSdkVersion = 15
+    targetSdkVersion =26
+    versionCode = 1
+    versionName ="1.0"
+
+    supportSdkVersion = '26.0.0-beta1'
+    kotlin_version = '1.1.51'
+
+    arouterCompiler = '1.1.4'
+    arouterAnnotation = '1.0.4'
+    arouterApi = '1.3.1'
+}

@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.sikan.componentdemo"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    implementation  fileTree(include: ['*.jar'], dir: 'libs')
+
+    if (isModuleRun.toBoolean()) {
+        compile project(':module_base')
+    } else {
+        compile project(':module_base')
+        compile project(':module_a')
+        compile project(':module_b')
+    }
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.ext.arouterCompiler"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+//    kapt 'com.alibaba:arouter-compiler:1.1.4'
+
+}
+repositories {
+    mavenCentral()
+}
