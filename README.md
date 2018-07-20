@@ -16,8 +16,6 @@ module_b &emsp;   compile  &emsp;&emsp;&emsp;   module_base
   
   
 #### 通过ARouter进行互不关联的module通信。  
-app  &emsp;&emsp;&emsp;&ensp;    <---> &emsp;&emsp;&emsp;   module_a  
-app  &emsp;&emsp;&emsp;&ensp;    <---> &emsp;&emsp;&emsp;   module_b  
 module_b &emsp;<---> &emsp;&emsp;&emsp;   module_a  
 module_a &emsp;<---> &emsp;&emsp;&emsp;   module_b  
 
