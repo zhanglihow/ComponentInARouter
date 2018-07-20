@@ -35,7 +35,6 @@ dependencies {
     if (isModuleRun.toBoolean()) {
         compile project(':module_base')
     } else {
-        compile project(':module_base')
         compile project(':module_a')
         compile project(':module_b')
     }
